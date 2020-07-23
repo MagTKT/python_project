@@ -20,19 +20,30 @@ def save_doc_as_file(uid=None,code=None,lang=None):
         uid = create_uid()
         code = '# Write your code here...'
     if lang is None:
-        with open('data/{}'.format(uid),'w') as fd:
-            fd.write(code)
+        fileName = 'data/{}'.format(uid)
     else:
-        with open('data/{}'.format(uid+'.'+lang),'w') as fd:
-            fd.write(code)
+        if (format(uid).find(".") == -1):  #pas d'extension dans le nom
+            fileName = 'data/{}'.format(uid+'.'+lang)
+        else:
+            fileName = 'data/{}'.format(uid)
+
+    with open(fileName,'w') as fd:
+        fd.write(code)
     return uid
 
 def read_doc_as_file(uid):
     '''Lit le document data/uid'''
+    if (format(uid).find(".") != -1):
+        print(format(uid).find("."))
+        extension = format(uid).split('.')[1]
+        print('extension : '+extension)
+    else:
+        extension = ''
+
     try:
         with open('data/{}'.format(uid)) as fd:
             code = fd.read()
-        return code
+        return {'code':code, 'lang':extension}
     except FileNotFoundError:
         return None
 

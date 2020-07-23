@@ -22,10 +22,12 @@ def create():
     
 @app.route('/edit/<string:uid>/')
 def edit(uid):
-    code = read_doc_as_file(uid)
+    info = read_doc_as_file(uid)
+    code = info['code']
+    lang = info['lang']
     if code is None:
         return render_template('error.html',uid=uid)
-    d = dict( uid=uid, code=code,
+    d = dict( uid=uid, code=code, lang = lang,
               url="{}view/{}".format(request.host_url,uid))
     return render_template('edit.html', **d) 
 
@@ -41,10 +43,12 @@ def publish():
 
 @app.route('/view/<string:uid>/')
 def view(uid):
-    code = read_doc_as_file(uid)
+    info = read_doc_as_file(uid)
+    code = info['code']
+    lang = info['lang']
     if code is None:
         return render_template('error.html',uid=uid)
-    d = dict( uid=uid, code=code,
+    d = dict( uid=uid, code=code, lang = lang,
               url="{}view/{}".format(request.host_url,uid))
     return render_template('view.html', **d)
 
@@ -54,4 +58,3 @@ def admin():
 
 if __name__ == '__main__':
     app.run()
-

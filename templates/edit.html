@@ -11,12 +11,13 @@
 	   {% endif %}
 	   <p align=center>
 	   <form method="POST" action="/publish" enctypwe="multipart/form-data">
-		<label for="lang-select">Choisit un language:</label>
+		<h3>Choisit un language:</h3>
 			<select name="lang" id="lang">
-				<option value="none">None</option>
-				<option value="py">Python</option>
-				<option value="css">Css</option>
-				<option value="html">Html</option>
+				<option value = '' {% if lang == '' %} selected {% endif %}>None</option>
+				<option value = 'css' {% if lang == 'css' %} selected {% endif %} >Css</option>
+				<option value = 'php' {% if lang == 'php' %} selected {% endif %}>Php</option>
+				<option value = 'py' {% if lang == 'py' %} selected {% endif %}>Python</option>
+				<option value = 'c' {% if lang == 'c' %} selected {% endif %}>c++</option>
 			</select>
 		   <table>
 		    <tr>
