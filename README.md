@@ -27,6 +27,8 @@ Réécriture reçues depuis sqlite
 
 Partie 3 : enregistrez les infos sur les utilisateurs qui publient du code
 
+Allez sur http://localhost:5000/admin/
+
 Nouvelle table users
 Ajout de functions d'interaction avec la table edition
 Ajout du template admin.html
