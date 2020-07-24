@@ -11,7 +11,7 @@ Partie 1 : enregistrer le langage de programmation utilisé
 -> python3 sharecode.py
 
 Ajout d'un menu déroulant dans la page d'édition permettant de selectionner le code.
-Ajout d'une condition pour sélectionner le language lors de la génération de la page.
+
 
 
 Partie 2 : Changez le procédé de stockage, plus de fichiers mais un SGBDR
