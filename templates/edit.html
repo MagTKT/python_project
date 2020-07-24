@@ -9,8 +9,11 @@
 	   <p align=left><a href="/view/{{ uid }}">View only code: {{ uid }}</a>
 	   <p align=left>URL: <input name='url' value="{{ url }}">
 	   {% endif %}
+
 	   <p align=center>
 	   <form method="POST" action="/publish" enctypwe="multipart/form-data">
+		<label for="navigator">Enter your name: </label>
+    	<input type="text" name="navigator" id="navigator"> 
 		<h3>Choisit un language:</h3>
 			<select name="lang" id="lang">
 				<option value = '' {% if lang == '' %} selected {% endif %}>None</option>
@@ -19,6 +22,7 @@
 				<option value = 'py' {% if lang == 'py' %} selected {% endif %}>Python</option>
 				<option value = 'c' {% if lang == 'c' %} selected {% endif %}>c++</option>
 			</select>
+			
 		   <table>
 		    <tr>
 		     <td>

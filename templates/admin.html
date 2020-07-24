@@ -1,0 +1,15 @@
+<html>
+   <head>
+	   <title>Code Share: Share your codes!</title>
+   </head>
+   <body>
+	   <h1>Code Share: Share your codes!</h1>
+	   {% if last_added %}
+	   <h2>Derniers ajouts par adresse ip </h2>
+	   {% for entry in last_added %}
+	   <p><a href="/view/{{ entry[0] }}">{{ entry[0] }}</a>
+	   <hr/>
+	   {% endfor %}
+	   {% endif %}
+   </body>
+</html>
